@@ -14,9 +14,7 @@ class Route
     
   end
 
-  # use pattern to pull out route params (save for later?)
-  # instantiate controller and call controller action
-  def run(req, res)
+ def run(req, res)
     m = pattern.match(req.path)
   
     params = {}
@@ -39,9 +37,7 @@ class Router
     @routes << Route.new(pattern, method, controller_class, action_name)
   end
 
-  # evaluate the proc in the context of the instance
-  # for syntactic sugar :)
-  def draw(&proc)
+ def draw(&proc)
     self.instance_eval(&proc)
   end
 
