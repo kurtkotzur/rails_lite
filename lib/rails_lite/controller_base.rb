@@ -46,8 +46,7 @@ class ControllerBase
     @session ||= Session.new(@req)
   end
 
-  # use this with the router to call action_name (:index, :show, :create...)
-  def invoke_action(name)
+ def invoke_action(name)
     self.send(name)
   end
 end
